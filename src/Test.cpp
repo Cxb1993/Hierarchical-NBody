@@ -157,7 +157,7 @@ void RunBH(int maxDepth, int N, double theta) {
     double error = AvgAbsError(exact, approx);
     double FLOPS = (double)BHNode::flops / (approxTime + 0.001);
     double speedup = (double)N * N / BHNode::flops;
-    printf("%8d %5d %5.3f %10ld %10.3f %10.3f %10.3f %10.2e %10.2e\n",
+    printf("%8d %5d %5.2f %10ld %10.3f %10.3f %10.3f %10.2e %10.2e\n",
         N, maxDepth, theta, BHNode::flops, speedup, directTime, approxTime, FLOPS, error);
     fflush(stdout);
 
@@ -187,16 +187,16 @@ void TestBHN() {
 
 void TestBHTheta() {
     PrintBHHeader();
-    for (int i = 0; i < 51; i++) {
-        double exponent = (0.06 * i) + 2;
-        int N = round(pow(10, exponent));
-        int levels = round(log((double)N) / log(4.0) + 0.5); 
-        if (levels <= 3) levels = 3;
-        RunBH(levels, N, 4.0);
+    for (int p = 0; p < 26; p++) {
+        int N = 4096;
+        int depth = 6;
+        double theta = pow(4.0, 0.2 * p);
+        RunBH(depth, N, theta);
     }
 }
 
 int main(int argc, char** argv) 
 {
+    TestBHTheta();
     return 0;
 }
