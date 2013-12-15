@@ -5,6 +5,8 @@ Hierarchical-NBody
 
 ![FMM Complexity](https://raw.github.com/chi-feng/Hierarchical-NBody/master/doc/resources/complexity.png)
 
+![FMM Complexity](https://raw.github.com/chi-feng/Hierarchical-NBody/master/doc/resources/truncation-error.png)
+
 ![FLOP Distribution](https://raw.github.com/chi-feng/Hierarchical-NBody/master/doc/resources/flop-distribution.png)
 
 ![FMM Complexity](https://raw.github.com/chi-feng/Hierarchical-NBody/master/doc/resources/mlfmm-performance.png)
